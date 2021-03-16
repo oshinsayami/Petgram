@@ -1,10 +1,12 @@
 import React from 'react'
 import Avatar from "@material-ui/core/Avatar"
 import '../App.css'
+import {connect} from 'react-redux'
 
-function Post() {
+const Post =({user})=> {
     return (
         <div className="post">
+            <h1>Welcome {user.username}</h1>
             <div className="post_header">
                 <Avatar className="post_avatar" />
                 <h3>Username</h3>
@@ -15,4 +17,10 @@ function Post() {
     )
 }
 
-export default Post
+const mapStateToProps = (state) => {
+    return {
+        user: state.auth.currentUser
+    }
+}
+
+export default connect(mapStateToProps)(Post)
