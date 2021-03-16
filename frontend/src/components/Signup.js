@@ -7,7 +7,7 @@ class Signup extends React.Component {
     state = {
         email: '',
         password: '',
-        passwordConfirmation: ''
+        password_confirmation: ''
     }
 
     handleOnChange = e => {
@@ -30,7 +30,7 @@ class Signup extends React.Component {
                     <label>Password</label>
                     <input name="password" value={this.state.password} onChange={this.handleOnChange} type='password' /><br />
                     <label>Confirm Password</label>
-                    <input name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} type ='password' /><br />
+                    <input name="password_confirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} type ='password' /><br />
                     <button type='submit'>Sign Up</button>
                 </form>
             </div>
