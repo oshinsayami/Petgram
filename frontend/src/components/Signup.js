@@ -18,6 +18,7 @@ class Signup extends React.Component {
 
     handleOnSubmit = e => {
         e.preventDefault()
+        this.props.signup(this.state)
     }
 
     render(){
