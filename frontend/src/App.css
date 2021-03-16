@@ -4,7 +4,6 @@
 
 .app {
   background-color: #fafafa;
-  height: 100vh;
 }
 
 .app_header {
@@ -12,4 +11,29 @@
   padding: 20px;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
+}
+
+.post {
+  border: 1px solid lightgray;
+  margin-bottom: 45px;
+}
+
+.post_header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.post_avatar {
+  margin-right: 10px;
+}
+
+.post_text {
+  font-weight: normal;
+  padding: 20px;
+}
+
+.post_image{
+  width: 100%;
+  object-fit: content;
 }
