@@ -4,11 +4,15 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Login from './components/Login'
 import Post from './components/Post'
 import Signup from './components/Signup'
+import { checkLoggedIn } from './redux/actions/authActions'
+import {connect } from 'react-redux'
 
+class App extends Component {
 
+  componentDidMount() {
+    this.props.checkLoggedIn();
+  }
 
-
-class App extends Component() {
   render() {
     return (
     <div className="App">
@@ -28,4 +32,4 @@ class App extends Component() {
   
 }
 
-export default App;
+export default connect(null, {checkLoggedIn})(App);
