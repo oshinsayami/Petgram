@@ -5,6 +5,7 @@ export const signup = (user, history) => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include',
             body: JSON.stringify({ user: user })
         })
             .then(res => res.json())
@@ -25,6 +26,7 @@ export const login = (user, history) => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include',
             body: JSON.stringify({ user: user })
         })
             .then(res => res.json())
