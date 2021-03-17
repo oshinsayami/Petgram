@@ -7,14 +7,25 @@ import Signup from './components/Signup'
 import { checkLoggedIn } from './redux/actions/authActions'
 import { connect } from 'react-redux'
 import Navbar from './components/Navbar'
+import {Redirect} from 'react-router-dom'
 
 class App extends Component {
+  state = {
+    loading: true
+  }
+
+  toggleLoading = () => {
+    this.setState({
+      loading: !this.state.loading
+    })
+  }
 
   componentDidMount() {
-    this.props.checkLoggedIn();
+    this.props.checkLoggedIn(this.toggleLoading);
   }
 
   render() {
+    if (this.state.loading) return <h1>Loading...</h1>
     return (
     <div className="App">
       <div className="app_header">
@@ -24,7 +35,13 @@ class App extends Component {
           <Navbar/>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route exact path='/posts' component={Post} />
+            <Route exact path='/posts' render={(props) => {
+              if (this.props.loggedIn) {
+                return <Post {...props} />
+              } else {
+                return <Redirect to='/' />
+              }
+            }} />
           <Route exact path='/signup' component={Signup} />
         </Switch>
       </Router>
@@ -34,4 +51,10 @@ class App extends Component {
   
 }
 
-export default connect(null, {checkLoggedIn})(App);
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.auth.loggedIn
+  }
+}
+
+export default connect(mapStateToProps, {checkLoggedIn})(App);
