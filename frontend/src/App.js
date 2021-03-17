@@ -5,7 +5,8 @@ import Login from './components/Login'
 import Post from './components/Post'
 import Signup from './components/Signup'
 import { checkLoggedIn } from './redux/actions/authActions'
-import {connect } from 'react-redux'
+import { connect } from 'react-redux'
+import Navbar from './components/Navbar'
 
 class App extends Component {
 
@@ -19,7 +20,8 @@ class App extends Component {
       <div className="app_header">
         <h1>Petgram</h1>
       </div>
-      <Router>
+        <Router>
+          <Navbar/>
         <Switch>
           <Route exact path='/' component={Login} />
           <Route exact path='/posts' component={Post} />
