@@ -7,11 +7,24 @@ import {logout} from '../redux/actions/authActions'
 class Navbar extends React.Component {
     render() {
         return (
-            <Link to="" onClick={() => this.props.logout()}>Logout</Link>
+        <div>
+            {this.props.loggedIn ? (
+                <>
+                <Link to="" onClick={() => this.props.logout()}>Logout</Link>
+                </>
+            ):("")
+            }
+        </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        loggedIn: state.auth.loggedIn
+    }
+}
     
-export default connect(null, {logout})(Navbar)
+export default connect(mapStateToProps, {logout})(Navbar)
             
            
