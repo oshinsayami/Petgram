@@ -40,17 +40,20 @@ export const login = (user, history) => {
     }
 }
 
-export const checkLoggedIn = () => {
+export const checkLoggedIn = (callback) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/logged_in`, {
             credentials: 'include',
         })
             .then((res) => res.json())
-            .then((data) => dispatch({
-                type: 'AUTH_SUCCESS',
-                payload: { loggedIn: data.logged_in, currentUser: data.user },
-            }))
-        }
+            .then((data) => {
+                dispatch({
+                    type: 'AUTH_SUCCESS',
+                    payload: { loggedIn: data.logged_in, currentUser: data.user },
+                })
+                callback()
+            })
+    }
 }
 
 export const logout = () => {
