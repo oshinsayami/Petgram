@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../redux/actions/postsAction'
 import PostForm from './PostForm'
+import PostList from './PostList'
+
 
 class PostsContainer extends React.Component {
 
@@ -13,6 +15,7 @@ class PostsContainer extends React.Component {
         return (
             <div>
                 <PostForm />
+                <PostList />
             </div>
         )
     }
