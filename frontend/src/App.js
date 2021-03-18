@@ -7,7 +7,7 @@ import Signup from './components/Signup'
 import { checkLoggedIn } from './redux/actions/authActions'
 import { connect } from 'react-redux'
 import Navbar from './components/Navbar'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -37,7 +37,9 @@ class App extends Component {
           <Route exact path='/' component={Login} />
             <Route exact path='/posts' render={(props) => {
               if (this.props.loggedIn) {
-                return <Post {...props} />
+                return (
+                  <Post {...props} />
+                 )
               } else {
                 return <Redirect to='/' />
               }
