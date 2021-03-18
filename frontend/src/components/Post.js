@@ -2,10 +2,12 @@ import React from 'react'
 import Avatar from "@material-ui/core/Avatar"
 import '../App.css'
 import { connect } from 'react-redux'
+import PostsContainer from './PostsContainer'
 
 const Post =({user})=> {
     return (
         <div className="post">
+            <PostsContainer/>
             <div className="name_header">
                 <h1>Welcome {user.username}</h1>
             </div>
