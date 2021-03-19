@@ -20,8 +20,7 @@ class PostForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
-        this.props.addPost(this.state)
+        this.props.addPost(this.state, this.props.history)
     }
 
     render() {
@@ -31,7 +30,7 @@ class PostForm extends Component {
                 <input type='text' value={this.state.image} onChange={this.handleChange} name="image"/>
                 <label>Caption:</label>
                 <input type='textarea' value={this.state.caption} onChange={this.handleChange} name="caption"/>
-                <input type="submit" value="Add Post" />
+                <button type="submit">Add Post</button>
             </form>
         )
     }
