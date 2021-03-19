@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {logout} from '../redux/actions/authActions'
+import { logout } from '../redux/actions/authActions'
+import { withRouter } from 'react-router-dom';
 
 
 class Navbar extends React.Component {
@@ -10,7 +11,9 @@ class Navbar extends React.Component {
         <div>
             {this.props.loggedIn ? (
                 <>
+                <Link to="/posts">Home</Link>
                 <Link to="" onClick={() => this.props.logout()}>Logout</Link>
+                <Link to="/newpost">Add Post</Link>
                 </>
             ):("")
             }
@@ -25,6 +28,6 @@ const mapStateToProps = state => {
     }
 }
     
-export default connect(mapStateToProps, {logout})(Navbar)
+export default withRouter(connect(mapStateToProps, {logout})(Navbar))
             
            
