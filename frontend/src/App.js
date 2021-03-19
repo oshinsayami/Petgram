@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Login from './components/Login'
 import Post from './components/Post'
 import Signup from './components/Signup'
+import PostForm from './components/PostForm'
 import { checkLoggedIn } from './redux/actions/authActions'
 import { connect } from 'react-redux'
 import Navbar from './components/Navbar'
@@ -44,7 +45,8 @@ class App extends Component {
                 return <Redirect to='/' />
               }
             }} />
-          <Route exact path='/signup' component={Signup} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path="/newpost" component={PostForm} />
         </Switch>
       </Router>
     </div>
