@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     def index
-        posts = Post.all
-        render json: posts
+        posts = Post.order(created_at: :desc)
+        render json: PostSerializer.new(posts)
     end
 
     def show 
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
         # @post.user_id = current_user.id
         # byebug
         if post.save
-            render json: post
+            render json: PostSerializer.new(post)
         else
             render json: {
                 status: 500,
