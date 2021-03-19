@@ -2,11 +2,11 @@ export const fetchPosts = () => {
     return (dispatch) => {
         fetch(`http://localhost:3000/posts`)
             .then(resp => resp.json())
-            .then(posts=> dispatch({type: 'FETCH_POSTS', payload: posts}))
+            .then(posts=> dispatch({type: 'FETCH_POSTS', payload: posts.data}))
     }
 }
 
-export const addPost = (post) => {
+export const addPost = (post, history) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/posts`, {
             method: 'POST',
@@ -15,7 +15,9 @@ export const addPost = (post) => {
         })
             .then(resp => resp.json())
             .then(post => {
-                dispatch({ type: 'ADD_POST', payload: post })
+                console.log(post)
+                dispatch({ type: 'ADD_POST', payload: post.data })
+                history.push(`/posts`)
             })
     
     }
