@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     def index
         posts = Post.order(created_at: :desc)
-        render json: PostSerializer.new(posts)
+        render json: posts.to_json(include: [:comments, :user])
     end
 
     def show 
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
         # @post.user_id = current_user.id
         # byebug
         if post.save
-            render json: PostSerializer.new(post)
+            render json: posts.to_json(include: [:comments, :user])
         else
             render json: {
                 status: 500,
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:caption, :image, :user_id)
+        params.require(:post).permit(:id, :caption, :image, :user_id)
     end
 end
