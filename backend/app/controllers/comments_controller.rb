@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
 
         if comment.save
             post = Post.find_by(id: comment.post_id)
-            render json: PostSerializer.new(post)
+            render json: post.to_json(include: [:comments, :user])
         else
             payload = {
-                error: 'Something went wrong. Please try again'
+                error: 'Something went wrong. Please try again',
                 status: 400
             }
             render json: payload, status:bad_request
