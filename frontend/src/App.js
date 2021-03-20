@@ -34,20 +34,20 @@ class App extends Component {
       </div>
         <Router>
           <Navbar/>
-        <Switch>
-          <Route exact path='/' component={Login} />
-            <Route exact path='/posts' render={(props) => {
-              if (this.props.loggedIn) {
-                return (
-                  <Post {...props} />
-                 )
-              } else {
-                return <Redirect to='/' />
-              }
-            }} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path="/newpost" component={PostForm} />
-        </Switch>
+          <Switch>
+            <Route exact path='/' component={Login} />
+              <Route exact path='/posts' render={(props) => {
+                if (this.props.loggedIn) {
+                  return (
+                    <Post {...props} />
+                  )
+                } else {
+                  return <Redirect to='/' />
+                }
+              }} />
+              <Route exact path='/signup' component={Signup} />
+              <Route exact path="/newpost" component={PostForm} />
+          </Switch>
       </Router>
     </div>
   );
