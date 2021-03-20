@@ -1,21 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PostDisplay from './posts/PostDisplay'
 
 
 const PostList= ({posts}) => {
     return (
         <div>
             {console.log(posts)}
-            {posts.map(post =>
-                <>
-                    <div className="post_header">
-                        {/* <Avatar className="post_avatar" /> */}
-                        <h3>{post.attributes.user.username}</h3>
-                    </div>
-                    <img className="post_image" src={post.attributes.image} />
-                    <h4 className="post_text"><strong>{post.attributes.user.username}</strong>{post.attributes.caption}</h4>
-                </>
-                )}   
+            {posts.map(post => {
+                // debugger
+                return (
+                    <PostDisplay key={post.id} post={post} />
+                )
+            }
+            )}
         </div>
     )
 }
