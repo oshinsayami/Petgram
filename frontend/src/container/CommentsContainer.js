@@ -15,4 +15,9 @@ class CommentsContainer extends Component {
     }
 }
 
-export default CommentsContainer
+const mapStateToProps = state => {
+    console.log(state)
+  return {state}
+}
+
+export default connect(mapStateToProps)(CommentsContainer)
