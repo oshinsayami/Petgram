@@ -14,8 +14,13 @@ class CommentsController < ApplicationController
         end
     end
 
+    # def destroy
+    #     comment= Comment.find(params[:id])
+    #     comment.destroy
+    #     render json: comment
+    # end
 
     def comment_params
-        params.require(:comment).permit(:id, :body, :post_id, :user_id)
+        params.require(:comment).permit(:id, :body, :post_id, :user_id, :username)
     end
 end
