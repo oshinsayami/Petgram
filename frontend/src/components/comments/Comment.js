@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { deleteComment } from '../../redux/actions/postsAction'
+import {connect} from 'react-redux'
+
 
 class Comment extends Component {
 
 
-  handleOnClick = () => {
-    this.props.deleteComment(this.props.comment.id)
-  }
+  // handleOnClick = () => {
+  //   this.props.deleteComment(this.props.comment.id)
+  // }
 
   render() {
     console.log(this.props)
@@ -13,13 +16,22 @@ class Comment extends Component {
     return (
       <div>
         <li>
+          {this.props.comment.username}
           {this.props.comment.body}
         </li>
-        <button onClick={this.handleOnClick}> x </button>
+        {/* <button onClick={this.handleOnClick}> x </button> */}
       </div>
     );
   }
 
 };
 
-export default Comment;
+const mapStateToProps = state => {
+  // debugger
+    console.log(state)
+    return {
+        posts: state.posts,
+    }
+}
+
+export default connect(mapStateToProps)(Comment)
