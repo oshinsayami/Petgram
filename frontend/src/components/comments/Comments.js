@@ -5,7 +5,7 @@ class Comments extends Component {
 
   render() {
     console.log(this.props)
-    const { comments, postId, deleteComment } = this.props;
+    const { username, comments, postId, deleteComment } = this.props;
     console.log(comments)
     console.log(postId)
     // debugger
@@ -13,10 +13,10 @@ class Comments extends Component {
        console.log(associatedComments)
 
     const commentList = associatedComments.map((comment, index) => {
-      return <Comment key={index} comment={comment} deleteComment={deleteComment} />
+      return <Comment key={index} username={username} comment={comment} deleteComment={deleteComment} />
       
       })
-        console.log(commentList)
+        // console.log(commentList)
 
     return (
       <div>
