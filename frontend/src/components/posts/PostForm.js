@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addPost } from '../redux/actions/postsAction'
+import { addPost } from '../../redux/actions/postsAction'
 import {connect} from 'react-redux'
 import { Button, Input } from '@material-ui/core'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { signup } from '../redux/actions/authActions'
+import { signup } from '../../redux/actions/authActions'
 import { connect } from 'react-redux'
 import {Button, Input} from '@material-ui/core'
  

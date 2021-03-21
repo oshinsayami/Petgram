@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PostDisplay from './posts/PostDisplay'
+import PostDisplay from './PostDisplay'
 
 
 const PostList= ({posts}) => {

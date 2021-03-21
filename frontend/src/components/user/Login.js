@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login } from '../redux/actions/authActions';
+import { login } from '../../redux/actions/authActions';
 import { connect } from 'react-redux';
 import { Button, Input } from '@material-ui/core';
 

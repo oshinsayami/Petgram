@@ -1,7 +1,7 @@
 import React from 'react'
-import '../App.css'
+import '../../App.css'
 import { connect } from 'react-redux'
-import PostsContainer from './PostsContainer'
+import PostsContainer from '../../container/PostsContainer'
 
 const Post =({user})=> {
     return (
