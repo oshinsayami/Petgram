@@ -13,7 +13,7 @@ class PostsController < ApplicationController
         # @post.user_id = current_user.id
         # byebug
         if post.save
-            render json: posts.to_json(include: [:comments, :user])
+            render json: post.to_json(include: [:comments, :user])
         else
             render json: {
                 status: 500,
