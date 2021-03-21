@@ -8,10 +8,10 @@ class CommentInput extends Component {
     state = {
         body: '',
         user_id: this.props.user_id,
-        post_id: parseInt(this.props.postId)
+        post_id: parseInt(this.props.postId),
+        username: this.props.username
     }
-
-  
+    
 
   handleOnChange = event => {
     // this.setState({
@@ -32,7 +32,8 @@ class CommentInput extends Component {
   }
 
   render() {
-    console.log(this.state)
+  console.log(this.state)
+  console.log(this.props)
     return (
      <div>
         <form onSubmit={this.handleOnSubmit} >
@@ -54,8 +55,8 @@ const mapStateToProps = (state) => {
             console.log(state)
 
     return {
-        user_id: state.auth.currentUser.id,
-        
+      user_id: state.auth.currentUser.id,
+      username: state.auth.currentUser.username
     }
 }
 
