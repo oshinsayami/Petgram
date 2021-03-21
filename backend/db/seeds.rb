@@ -15,4 +15,4 @@ kelly= User.create(username: "kelly01", email: "kelly@gmail.com", password: "pas
 
 post1= Post.create(caption:"The view", user_id: jack.id, image:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")
 
-comment1 = Comment.create(body:"Beautiful", user_id: kelly.id, post_id: post1.id)
+comment1 = Comment.create(body:"Beautiful", user_id: kelly.id, post_id: post1.id, username:"kelly")
