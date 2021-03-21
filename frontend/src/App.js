@@ -28,12 +28,13 @@ class App extends Component {
   render() {
     if (this.state.loading) return <h1>Loading...</h1>
     return (
-    <div className="App">
-      <div className="app_header">
-        <h1>Petgram</h1>
-      </div>
+      <div className="App">
         <Router>
+      <div className="app_header">
+          <h1>Petgram</h1>
           <Navbar/>
+      </div>
+        
           <Switch>
             <Route exact path='/' component={Login} />
               <Route exact path='/posts' render={(props) => {

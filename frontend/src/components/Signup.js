@@ -1,7 +1,8 @@
 import React from 'react'
 import { signup } from '../redux/actions/authActions'
-import {connect} from 'react-redux'
-
+import { connect } from 'react-redux'
+import {Button, Input} from '@material-ui/core'
+ 
 class Signup extends React.Component {
     
     state = {
@@ -25,17 +26,15 @@ class Signup extends React.Component {
     render(){
         return (
             <div>
-                <form onSubmit={this.handleOnSubmit}>
-                    <label>Email</label>
-                    <input name="email" value={this.state.email} onChange={this.handleOnChange} type='text' /><br />
-                    <label>Username</label>
-                    <input name="username" value={this.state.username} onChange={this.handleOnChange} type='text' /><br />
-                    <label>Password</label>
-                    <input name="password" value={this.state.password} onChange={this.handleOnChange} type='password' /><br />
-                    <label>Confirm Password</label>
-                    <input name="password_confirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} type ='password' /><br />
-                    <button type='submit'>Sign Up</button>
-                </form>
+                <center>
+                    <form onSubmit={this.handleOnSubmit} className="app__signup">
+                        <Input placeholder="email" name="email" value={this.state.email} onChange={this.handleOnChange} type='text' /><br />
+                        <Input placeholder="username" name="username" value={this.state.username} onChange={this.handleOnChange} type='text' /><br />
+                        <Input placeholder="password" name="password" value={this.state.password} onChange={this.handleOnChange} type='password' /><br />
+                        <Input placeholder="confirm password" name="password_confirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} type ='password' /><br />
+                        <Button type='submit'>Sign Up</Button>
+                    </form>
+                </center>
             </div>
         )   
     }

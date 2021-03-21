@@ -5,12 +5,12 @@ import PostsContainer from './PostsContainer'
 
 const Post =({user})=> {
     return (
-        <div className="post">
+        <div>
             <div className="name_header">
                 <h1>Welcome {user.username}</h1>
             </div>
             <PostsContainer />
-            </div>
+        </div>
     )
 }
 

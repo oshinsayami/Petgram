@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { addPost } from '../redux/actions/postsAction'
 import {connect} from 'react-redux'
+import { Button, Input } from '@material-ui/core'
 
 class PostForm extends Component {
     
@@ -25,12 +26,10 @@ class PostForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>Image Link:</label>
-                <input type='text' value={this.state.image} onChange={this.handleChange} name="image"/>
-                <label>Caption:</label>
-                <input type='textarea' value={this.state.caption} onChange={this.handleChange} name="caption"/>
-                <button type="submit">Add Post</button>
+            <form className="app__signup" onSubmit={this.handleSubmit}>
+                <Input type='text' placeholder="Image Link" value={this.state.image} onChange={this.handleChange} name="image"/>
+                <Input type='textarea' placeholder="Enter a caption"value={this.state.caption} onChange={this.handleChange} name="caption"/>
+                <Button type="submit">Add Post</Button>
             </form>
         )
     }

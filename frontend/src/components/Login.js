@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { login } from '../redux/actions/authActions';
 import { connect } from 'react-redux';
+import { Button, Input } from '@material-ui/core';
 
 class Login extends Component {
   state = {
@@ -22,25 +23,25 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit}>
-          <label>Email</label>
-          <input
-            name="email"
-            value={this.state.email}
-            onChange={this.handleOnChange}
-            type="text"
-          />
-          <br />
-          <label>Password</label>
-          <input
-            name="password"
-            value={this.state.password}
-            onChange={this.handleOnChange}
-            type="password"
-          />
-          <br />
-          <button type="submit">Login</button>
-        </form>
+        <center>
+          <form onSubmit={this.handleOnSubmit} className="app__signup">
+            <Input
+              placeholder="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleOnChange}
+              type="text"
+            />
+            <Input
+              name="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleOnChange}
+              type="password"
+            />
+            <Button type="submit">Login</Button>
+          </form>
+        </center>
       </div>
     );
   }
