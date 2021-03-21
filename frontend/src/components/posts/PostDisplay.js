@@ -8,7 +8,7 @@ class PostDisplay extends React.Component{
         console.log(post)
         return (
             // <div></div>
-            <div>
+            <div className="post">
                 <div className="post_header">
                     <Avatar className="post_avatar" />
                     <h3>{post.user.username}</h3>
