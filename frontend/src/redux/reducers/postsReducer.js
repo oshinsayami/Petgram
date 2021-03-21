@@ -1,4 +1,4 @@
-export default (state =[], action) => {
+export default (state = [], action) => {
     switch (action.type) {
         case 'FETCH_POSTS':
             return action.payload
@@ -20,21 +20,24 @@ export default (state =[], action) => {
                 }
             })
         
-        // case 'DELETE_COMMENT':
-        //     console.log(state)
-        //     console.log(action.payload)
-        //     return [...state]
-        //     // debugger
-        //     // return state.map(sts => {
-        //     //     const filteredComment = sts.comments.filter(comment =>
-        //     //         comment.id !== action.payload)
-        //     //     // {debugger}
-        //     //     return filteredComment
-        //     // })
-        //     // const filteredRecipe = state.recipes.filter(recipe =>
-        //     // recipe.id !== action.payload.id)
-        // //     return { ...state, recipe: filteredRecipe }
+    //     case 'DELETE_COMMENT':
+    //         console.log(state)
+    //         console.log(action.payload)
+    //         // debugger
+    //         return [...state]
+            
+    //         // return state.map(sts => {
+    //         //     const filteredComment = sts.comments.filter(comment =>
+    //         //         comment.id !== action.payload)
+    //         //     // {debugger}
+    //         //     return filteredComment
+    //         // })
+    //         // const filteredRecipe = state.recipes.filter(recipe =>
+    //         // recipe.id !== action.payload.id)
+    //     //     return { ...state, recipe: filteredRecipe }
         default:
             return state
     }
 }
+
+// { ...state, post:[]}

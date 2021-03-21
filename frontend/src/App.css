@@ -7,12 +7,19 @@
 }
 
 .app_header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
   display: flex;
   justify-content: space-between
+}
+
+.name_header{
+  padding: 20px;
 }
 
 .post {
@@ -50,4 +57,35 @@
   flex-direction: column;
   padding: 20px;
 
+}
+
+.post__commentbox{
+  display: flex;
+  margin-top: 10px;
+}
+
+.post__input{
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.post__button{
+  flex: 0;
+  border: none;
+  border-top: 1px solid lightgray;
+  color: #6082a3
+}
+
+.post__comments{
+  padding: 5px 20px;
+}
+
+.likebtn{
+height: 38px;
+padding:0 30 px;
+font-size: 11px;
+background-color: transparent;
+border-radius: 6px;
 }

@@ -36,13 +36,13 @@ class CommentInput extends Component {
   console.log(this.props)
     return (
      <div>
-        <form onSubmit={this.handleOnSubmit} >
-          <label>Add Comment</label>
-          <input
+        <form className="post__commentbox" onSubmit={this.handleOnSubmit} >
+          <input className="post__input"
+            placeholder="Add a comment"
             type="text"
             value={this.state.body}
             onChange={this.handleOnChange} name="body"/>
-          <input type="submit" />
+          <button className="post__button" type="submit" >Post</button>
         </form>
       </div>
     );

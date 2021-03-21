@@ -8,8 +8,9 @@ class CommentsContainer extends Component {
         console.log(this.props)
         return (
             <div>
-                <CommentInput addComment={this.props.addComment} postId={this.props.post.id} />
                 <Comments comments={this.props.post.comments} postId={this.props.post.id} deleteComment={this.props.deleteComment} />
+                <CommentInput addComment={this.props.addComment} postId={this.props.post.id} />
+
             </div>
         )
     }

@@ -6,19 +6,19 @@ import {connect} from 'react-redux'
 class Comment extends Component {
 
 
-  // handleOnClick = () => {
-  //   this.props.deleteComment(this.props.comment.id)
-  // }
+  handleOnClick = () => {
+    this.props.deleteComment(this.state)
+  }
 
   render() {
     console.log(this.props)
     // const { comment } = this.props;
     return (
-      <div>
-        <li>
-          {this.props.comment.username}
-          {this.props.comment.body}
-        </li>
+      <div className="post__comments">
+        <p>
+          <strong>{this.props.comment.username}</strong> {this.props.comment.body}
+        </p>
+        
         {/* <button onClick={this.handleOnClick}> x </button> */}
       </div>
     );

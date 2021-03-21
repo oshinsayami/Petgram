@@ -20,9 +20,7 @@ class Comments extends Component {
 
     return (
       <div>
-        <ul>
           {commentList}
-        </ul>
       </div>
     );
   }
