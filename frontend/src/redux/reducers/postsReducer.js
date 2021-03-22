@@ -20,21 +20,26 @@ export default (state = [], action) => {
                 }
             })
         
-    //     case 'DELETE_COMMENT':
-    //         console.log(state)
-    //         console.log(action.payload)
-    //         // debugger
-    //         return [...state]
-            
-    //         // return state.map(sts => {
-    //         //     const filteredComment = sts.comments.filter(comment =>
-    //         //         comment.id !== action.payload)
-    //         //     // {debugger}
-    //         //     return filteredComment
-    //         // })
-    //         // const filteredRecipe = state.recipes.filter(recipe =>
-    //         // recipe.id !== action.payload.id)
-    //     //     return { ...state, recipe: filteredRecipe }
+        case 'DELETE_COMMENT':
+            console.log(state)
+            console.log(action.payload)
+            // debugger
+            // return [...state]
+            return state.map(sts => {
+                  return {
+                     ...sts,   //all the other post properties like the id and caption
+                     comments: sts.comments.filter(comment => comment.id !== action.payload)
+                  }
+            })
+            // return state.map(sts => {
+            //     const filteredComment = sts.comments.filter(comment =>
+            //         comment.id !== action.payload)
+            //     // {debugger}
+            //     return filteredComment
+            // })
+            // const filteredRecipe = state.recipes.filter(recipe =>
+            // recipe.id !== action.payload.id)
+        //     return { ...state, recipe: filteredRecipe }
         default:
             return state
     }
