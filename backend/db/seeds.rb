@@ -10,9 +10,14 @@ User.destroy_all
 Post.destroy_all
 Comment.destroy_all
 
-jack= User.create(username: "jack11", email: "jack@gmail.com", password:"password")
-kelly= User.create(username: "kelly01", email: "kelly@gmail.com", password: "password")
+toto= User.create(username: "Toto", email: "toto@gmail.com", password:"password")
+milo= User.create(username: "Milo", email: "milo@gmail.com", password: "password")
 
-post1= Post.create(caption:"The view", user_id: jack.id, image:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")
 
-comment1 = Comment.create(body:"Beautiful", user_id: kelly.id, post_id: post1.id, username:"kelly")
+post1= Post.create(caption:"This is me", user_id: toto.id, image:"https://d17fnq9dkz9hgj.cloudfront.net/uploads/2020/04/shelter-dog-cropped-1.jpg")
+post2= Post.create(caption:"Small me", user_id: milo.id, image:"https://s3-prod.adage.com/s3fs-public/iStock-1094806232.jpg")
+post3= Post.create(caption:"Look at me", user_id: toto.id, image:"https://www.milofoundation.org/wp-content/uploads/2021/02/hello-1-scaled-e1612913435618-300x300.jpeg")
+
+
+comment1 = Comment.create(body:"So cute", user_id: toto.id, post_id: post2.id, username:"toto")
+comment1 = Comment.create(body:"woof woof", user_id: milo.id, post_id: post1.id, username:"Milo")
