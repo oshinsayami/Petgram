@@ -39,20 +39,20 @@ export const addComment = (comment) => {
     }
 }
 
-// export const deleteComment = (id) => {
-//     return (dispatch) => {
-//         fetch(`http://localhost:3000/comments/${id}`, {
-//             method: 'DELETE',
-//             // credentials: 'include',
-//             headers: { 'Content-Type': 'application/json' }
-//         })
-//             .then((resp) => {
-//                 if (resp.ok) {
-//                     dispatch({ type: 'DELETE_COMMENT', payload: id })
-//                 } else {
-//                     window.alert('Unable to delete')
-//                 }
-//             })
-//             .catch(error => console.log(error))
-//     }
-// }
+export const deleteComment = (id) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/comments/${id}`, {
+            method: 'DELETE',
+            // credentials: 'include',
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then((resp) => {
+                if (resp.ok) {
+                    dispatch({ type: 'DELETE_COMMENT', payload: id })
+                } else {
+                    window.alert('Unable to delete')
+                }
+            })
+            .catch(error => console.log(error))
+    }
+}

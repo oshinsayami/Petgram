@@ -7,7 +7,7 @@ class Comment extends Component {
 
 
   handleOnClick = () => {
-    this.props.deleteComment(this.state)
+    this.props.deleteComment(this.props.comment.id)
   }
 
   render() {
@@ -19,7 +19,7 @@ class Comment extends Component {
           <strong>{this.props.comment.username}</strong> {this.props.comment.body}
         </p>
         
-        {/* <button onClick={this.handleOnClick}> x </button> */}
+        <button onClick={this.handleOnClick}> x </button>
       </div>
     );
   }
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Comment)
+export default connect(mapStateToProps, {deleteComment})(Comment)
