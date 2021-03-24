@@ -15,10 +15,14 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        debugger
+        # debugger
         comment= Comment.find(params[:id])
-        comment.destroy
-        render json: comment
+        if comment.user_id == current_user.id
+            comment.destroy
+            render json: comment
+        else
+            render json: @comment.errors.full_messages, status: 422
+        end
     end
 
     def comment_params

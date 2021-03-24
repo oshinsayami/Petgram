@@ -43,7 +43,7 @@ export const deleteComment = (id) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/comments/${id}`, {
             method: 'DELETE',
-            // credentials: 'include',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
         })
             .then((resp) => {
