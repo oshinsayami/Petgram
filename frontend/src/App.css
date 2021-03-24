@@ -79,6 +79,8 @@
 }
 
 .post__comments{
+  display: flex;
+  justify-content: space-between;
   padding: 5px 20px;
 }
 
@@ -88,4 +90,12 @@ padding:0 30 px;
 font-size: 11px;
 background-color: transparent;
 border-radius: 6px;
+}
+
+.delete__icon {
+  display: none;
+}
+
+.post__comments:hover .delete__icon {
+  display: inline-block;
 }

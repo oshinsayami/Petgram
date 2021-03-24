@@ -19,7 +19,7 @@ class Comment extends Component {
           <strong>{this.props.comment.username}</strong> {this.props.comment.body}
         </p>
         
-        <button onClick={this.handleOnClick}> x </button>
+        <button className="delete__icon" onClick={this.handleOnClick}> x </button>
       </div>
     );
   }
