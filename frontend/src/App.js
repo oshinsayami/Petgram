@@ -30,10 +30,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-      <div className="app_header">
-          <h1>Petgram</h1>
-          <Navbar/>
-      </div>
+          <div className="app_header">
+              <h1>Petgram</h1>
+              <Navbar/>
+          </div>
         
           <Switch>
             <Route exact path='/' component={Login} />
