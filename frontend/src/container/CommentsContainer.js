@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 class CommentsContainer extends Component {
     render() {
-        console.log(this.props)
         return (
             <div>
                 <Comments comments={this.props.post.comments} postId={this.props.post.id} deleteComment={this.props.deleteComment} />
@@ -17,7 +16,6 @@ class CommentsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
   return {state}
 }
 

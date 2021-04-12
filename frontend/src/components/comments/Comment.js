@@ -5,13 +5,11 @@ import {connect} from 'react-redux'
 
 class Comment extends Component {
 
-
   handleOnClick = () => {
     this.props.deleteComment(this.props.comment.id)
   }
 
   render() {
-    console.log(this.props)
     // const { comment } = this.props;
     return (
       <div className="post__comments">
@@ -27,11 +25,9 @@ class Comment extends Component {
 };
 
 const mapStateToProps = state => {
-  // debugger
-    console.log(state)
-    return {
-        posts: state.posts,
-    }
+  return {
+    posts: state.posts,
+  }
 }
 
 export default connect(mapStateToProps, {deleteComment})(Comment)

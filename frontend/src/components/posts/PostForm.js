@@ -36,12 +36,10 @@ class PostForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-    // debugger
-            console.log(state)
-
     return {
         user_id: state.auth.currentUser.id
     }
 }
+
 
 export default connect(mapStateToProps, {addPost})(PostForm)

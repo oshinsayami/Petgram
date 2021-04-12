@@ -6,9 +6,7 @@ import PostDisplay from './PostDisplay'
 const PostList= ({posts}) => {
     return (
         <div>
-            {console.log(posts)}
             {posts.map(post => {
-                // debugger
                 return (
                     <PostDisplay key={post.id} post={post} />
                 )
@@ -21,8 +19,6 @@ const PostList= ({posts}) => {
  
 
 const mapStateToProps = state => {
-    // debugger
-    console.log(state)
     return {
         posts: state.posts,
     }

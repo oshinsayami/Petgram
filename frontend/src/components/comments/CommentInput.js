@@ -27,13 +27,10 @@ class CommentInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.setState({ body: "" });
-    console.log(this.state)
     this.props.addComment(this.state)
   }
 
   render() {
-  console.log(this.state)
-  console.log(this.props)
     return (
      <div>
         <form className="post__commentbox" onSubmit={this.handleOnSubmit} >
@@ -51,9 +48,6 @@ class CommentInput extends Component {
 };
 
 const mapStateToProps = (state) => {
-    // debugger
-            console.log(state)
-
     return {
       user_id: state.auth.currentUser.id,
       username: state.auth.currentUser.username
